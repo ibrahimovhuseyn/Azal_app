@@ -1,9 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import Inputs from '../Inputs/Inputs'
 
 function Roots() {
   return (
-    <div className='roots container'>
+    <div className='roots container mt-5'>
       <ul>
         <li>
           <NavLink
@@ -18,21 +19,15 @@ function Roots() {
           </NavLink>
         </li>
         <li>
-        <NavLink
-        to={'/flymanagment'}
-      >Rezervasiyını idarə edilməsi
-      </NavLink>
-        </li>
-        <li>
           <NavLink
-            to={'/flystatus'}
-          >Uçuşun statusu
+            to={'/flymanagment'}
+          >Rezervasiyını idarə edilməsi
           </NavLink>
         </li>
       </ul>
 
 
-      
+
 
     </div>
   )

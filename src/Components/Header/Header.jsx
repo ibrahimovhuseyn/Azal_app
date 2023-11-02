@@ -1,8 +1,13 @@
 import React from 'react'
+import Logo from './Logo'
+import Nav from './Nav'
 
 function Header() {
   return (
-    <div className='header'>Header</div>
+    <div className='header container'>
+      <Logo/>
+      <Nav/>
+    </div>
   )
 }
 

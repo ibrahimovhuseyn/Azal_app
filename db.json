@@ -1,25 +1,39 @@
 {
   "users": [
     {
-      "name": "Huseyn",
-      "surname": "Ibrahimov",
+      "fullname": " Admin",
+      "fin": "admin",
+      "password": "admin",
+      "email": "admin@mail.ru",
+      "id": 10000
+    },
+    {
+      "fullname": "Ibrahimov Huseyn",
+      "fin": "2GWQ1XF",
       "password": "huseyn",
-      "username": "huseyn",
+      "email": "huseyn@mail.ru",
       "id": 1
     },
     {
-      "name": "Aydan",
-      "surname": "Memmedzade",
+      "fullname": "Memmedzade Aydan",
+      "fin": "TGWQ1AS",
       "password": "aydan",
-      "username": "aydan",
+      "email": "aydan@mail.ru",
       "id": 2
     },
     {
-      "name": "Elsad",
-      "surname": "Memmedzade",
+      "fullname": "Memmedzade Elsad",
+      "fin": "4H77YS",
       "password": "elsad",
-      "username": "elsad",
-      "id": 3
+      "email": "elsad@mail.ru",
+      "id": 4
+    },
+    {
+      "fullname": "Elsad",
+      "fin": "elsad2002",
+      "email": "elsad@mail.ru",
+      "password": "elsad",
+      "id": 10001
     }
   ],
   "Cities": [
@@ -197,7 +211,7 @@
       "toAirportName": "Roma Airport",
       "fromAirportId": 1,
       "fromAirportName": "Haydar Aliyev Airport",
-      "price" : "100$"
+      "price": 100
     },
     {
       "id": 2,
@@ -208,8 +222,7 @@
       "toAirportName": "IstanbulSabiha Airport",
       "fromAirportId": 1,
       "fromAirportName": "Haydar Aliyev Airport",
-      "price" : "85$"
-
+      "price": 85
     },
     {
       "id": 3,
@@ -220,8 +233,7 @@
       "toAirportName": "IstanbulSabiha Airport",
       "fromAirportId": 2,
       "fromAirportName": "Nakchivan Airport",
-      "price" : "72$"
-
+      "price": 72
     },
     {
       "id": 4,
@@ -232,7 +244,7 @@
       "toAirportName": "Milan Airport",
       "fromAirportId": 5,
       "fromAirportName": "Roma Airport",
-      "price" : "95$"
+      "price": 95
     },
     {
       "id": 5,
@@ -243,7 +255,7 @@
       "toAirportName": "Ganja Airport",
       "fromAirportId": 2,
       "fromAirportName": "Nakchivan Airport",
-      "price" : "18$"
+      "price": 18
     },
     {
       "id": 6,
@@ -254,7 +266,7 @@
       "toAirportName": "Roma Airport",
       "fromAirportId": 3,
       "fromAirportName": "IstanbulSabiha Airport",
-      "price" : "125$"
+      "price": 125
     },
     {
       "id": 7,
@@ -265,7 +277,7 @@
       "toAirportName": "San Siro Airport",
       "fromAirportId": 3,
       "fromAirportName": "IstanbulSabiha Airport",
-      "price" : "85$"
+      "price": 85
     },
     {
       "id": 8,
@@ -276,7 +288,7 @@
       "toAirportName": "Haydar Aliyev Airport",
       "fromAirportId": 6,
       "fromAirportName": "San Siro Airport",
-      "price" : "90$"
+      "price": 150
     },
     {
       "id": 9,
@@ -287,7 +299,7 @@
       "toAirportName": "Roma Airport",
       "fromAirportId": 3,
       "fromAirportName": "IstanbulSabiha Airport",
-      "price" : "125$"
+      "price": 100
     },
     {
       "id": 10,
@@ -298,7 +310,7 @@
       "toAirportName": "Izmir Airport",
       "fromAirportId": 8,
       "fromAirportName": "Milan Airport",
-      "price" : "155$"
+      "price": 160
     },
     {
       "id": 11,
@@ -309,7 +321,7 @@
       "toAirportName": "Roma Airport",
       "fromAirportId": 8,
       "fromAirportName": "Milan Airport",
-      "price" : "145$"
+      "price": 120
     },
     {
       "id": 12,
@@ -320,7 +332,7 @@
       "toAirportName": "Napoli Airport",
       "fromAirportId": 10,
       "fromAirportName": "Ataturk Airport",
-      "price" : "125$"
+      "price": 90
     },
     {
       "id": 13,
@@ -331,7 +343,7 @@
       "toAirportName": "Milan Airport",
       "fromAirportId": 4,
       "fromAirportName": "Ankara Airport",
-      "price" : "150$"
+      "price": 145
     },
     {
       "id": 14,
@@ -342,7 +354,7 @@
       "toAirportName": "Haydar Aliyev Airport",
       "fromAirportId": 11,
       "fromAirportName": "Izmir Airport",
-      "price" : "100$"
+      "price": 100
     },
     {
       "id": 15,
@@ -353,7 +365,7 @@
       "toAirportName": "San Siro Airport",
       "fromAirportId": 11,
       "fromAirportName": "Izmir Airport",
-      "price" : "90$"
+      "price": "90$"
     },
     {
       "id": 16,
@@ -364,7 +376,7 @@
       "toAirportName": "Milan Airport",
       "fromAirportId": 9,
       "fromAirportName": "Napoli Airport",
-      "price" : "150$"
+      "price": 80
     },
     {
       "id": 17,
@@ -375,7 +387,7 @@
       "toAirportName": "Ataturk Airport",
       "fromAirportId": 9,
       "fromAirportName": "Napoli Airport",
-      "price" : "150$"
+      "price": 125
     },
     {
       "id": 18,
@@ -386,7 +398,7 @@
       "toAirportName": "IstanbulSabiha Airport",
       "fromAirportId": 7,
       "fromAirportName": "San Siro Airport",
-      "price" : "150$"
+      "price": 90
     },
     {
       "id": 19,
@@ -397,16 +409,95 @@
       "toAirportName": "Ganja Airport",
       "fromAirportId": 7,
       "fromAirportName": "San Siro Airport",
-      "price" : "150$"
+      "price": 150
     }
   ],
-  "Tickets": [
+  "Soldtickets": [
     {
-      "id": 5,
-      "tickestnumber": "AQSD15485",
-      "passengerId": 1,
-      "flieId": 7,
-      "ticketPrice": 100
+      "rezervationNumber": 1698913181419,
+      "flyType": "Economy",
+      "totalPrice": 90,
+      "userFin": "2GWQ1XF",
+      "departureDate": "12.10.2024",
+      "fly": "Ataturk Airport-Napoli Airport",
+      "ticketNumber": "MI15F646",
+      "ticketCount": "1",
+      "fromAirportId": 10,
+      "id": 2
+    },
+    {
+      "rezervationNumber": 1698921688453,
+      "flyType": "Business",
+      "totalPrice": 200,
+      "userFin": "TGWQ1AS",
+      "departureDate": "12.02.2024",
+      "fly": "Haydar Aliyev Airport-Roma Airport",
+      "ticketNumber": "ASF15646",
+      "ticketCount": "2",
+      "fromAirportId": 1,
+      "id": 3
+    },
+    {
+      "rezervationNumber": 1698925341719,
+      "flyType": "Economy",
+      "totalPrice": 320,
+      "userFin": "TGWQ1AS",
+      "departureDate": "21.01.2024",
+      "fly": "Napoli Airport-Milan Airport",
+      "ticketNumber": "MI15F646",
+      "ticketCount": "4",
+      "fromAirportId": 9,
+      "id": 4
+    }
+  ],
+  "registeredTickets": [
+    {
+      "rezervationNumber": 1698906954900,
+      "flyType": "Business",
+      "totalPrice": 72,
+      "userFin": "2GWQ1XF",
+      "departureDate": "11.02.2023",
+      "fly": "Nakchivan Airport-IstanbulSabiha Airport",
+      "ticketNumber": "NXF15646",
+      "ticketCount": "1",
+      "fromAirportId": 2,
+      "id": 1
+    },
+    {
+      "rezervationNumber": 1698921688453,
+      "flyType": "Business",
+      "totalPrice": 200,
+      "userFin": "TGWQ1AS",
+      "departureDate": "12.02.2024",
+      "fly": "Haydar Aliyev Airport-Roma Airport",
+      "ticketNumber": "ASF15646",
+      "ticketCount": "2",
+      "fromAirportId": 1,
+      "id": 3
+    },
+    {
+      "rezervationNumber": 1698925341719,
+      "flyType": "Economy",
+      "totalPrice": 320,
+      "userFin": "TGWQ1AS",
+      "departureDate": "21.01.2024",
+      "fly": "Napoli Airport-Milan Airport",
+      "ticketNumber": "MI15F646",
+      "ticketCount": "4",
+      "fromAirportId": 9,
+      "id": 4
+    },
+    {
+      "rezervationNumber": 1698925933418,
+      "flyType": "Business",
+      "totalPrice": 125,
+      "userFin": "elsad2002",
+      "departureDate": "09.09.2023",
+      "fly": "IstanbulSabiha Airport-Roma Airport",
+      "ticketNumber": "MI15F646",
+      "ticketCount": "1",
+      "fromAirportId": 3,
+      "id": 6
     }
   ]
 }

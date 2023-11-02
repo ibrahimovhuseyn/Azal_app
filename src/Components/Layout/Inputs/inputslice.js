@@ -4,27 +4,45 @@ const initialState = {
     countryList: [],
     cityList: [],
     airportList: [],
-    flyList : []
+    flyList: [],
+    selectedCountry: {},
+    selectedCity: {},
+    selectedAirport: {},
 }
 
 export const inputSlice = createSlice({
     name: "input",
     initialState,
     reducers: {
-        setCountry: (state, action) => {
+        getCountryList: (state, action) => {
             state.countryList = action.payload
         },
-        setCity: (state, action) => {
+        getCityList: (state, action) => {
             state.cityList = action.payload
         },
-        setAirports: (state, action) => {
+        getAirportList: (state, action) => {
             state.airportList = action.payload
         },
-        setFly : (state, action) =>{
+        getFlyList: (state, action) => {
             state.flyList = action.payload
+        },
+        setSelectedCountry: (state, action) => {
+            state.selectedCountry = action.payload
+        },
+        setSelectedCity: (state, action) => {
+            state.selectedCity = action.payload
+        },
+        setSelectedAirport: (state, action) => {
+            state.selectedAirport = action.payload
         }
-        
     }
 })
-export const { setCountry, setCity, setAirports, setFly } = inputSlice.actions
+export const { getCountryList,
+    getAirportList,
+    getCityList,
+    setSelectedCountry,
+    setSelectedCity,
+    setSelectedAirport,
+    getFlyList,
+} = inputSlice.actions
 export default inputSlice.reducer

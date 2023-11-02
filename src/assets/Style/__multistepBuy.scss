@@ -1,0 +1,77 @@
+.main {
+    width: 1100px;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: #8ECDDD;
+    margin: 3rem auto;
+    -webkit-box-shadow: 0px 9px 25px -1px rgba(26, 24, 24, 0.75);
+    -moz-box-shadow: 0px 9px 25px -1px rgba(26, 24, 24, 0.75);
+    box-shadow: 0px 9px 25px -1px rgba(26, 24, 24, 0.75);
+
+    .stepNav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .navItem {
+            width: 100%;
+
+            button {
+                width: inherit;
+                text-align: start;
+                background-color: #CEDEBD;
+            }
+
+            &.active {
+                button {
+                    background: #22668D;
+                }
+            }
+        }
+    }
+
+    .stepControl {
+        padding-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .stepItem {
+        margin-top: 1rem;
+    }
+
+    .reactPhoneInput {
+        display: flex;
+        width: 100%;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+        &.disabled {
+            background: #e9ecef;
+        }
+
+        &.PhoneInput--focus {
+            border-color: #2684ff;
+            box-shadow: 0 0 0 1px #2684ff;
+        }
+
+        .PhoneInputCountryIcon--border {
+            box-shadow: 0 0 0 var(--PhoneInputCountryFlag-borderWidth) var(--PhoneInputCountryFlag-borderColor),
+                inset 0 0 0 var(--PhoneInputCountryFlag-borderWidth) var(--PhoneInputCountryFlag-borderColor) !important;
+        }
+
+        input {
+            border: none;
+            outline: none;
+        }
+    }
+}
