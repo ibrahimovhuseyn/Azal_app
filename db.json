@@ -164,43 +164,6 @@
       "id": 2
     }
   ],
-  "Genders": [
-    {
-      "id": 7,
-      "kind": "Woman"
-    },
-    {
-      "id": 6,
-      "kind": "Man"
-    }
-  ],
-  "PassengerTypes": [
-    {
-      "id": 8,
-      "kind": "Adult"
-    },
-    {
-      "id": 9,
-      "kind": "Child"
-    }
-  ],
-  "DocumentTypes": [
-    {
-      "id": 2,
-      "kind": "Passport"
-    }
-  ],
-  "Passengers": [
-    {
-      "id": 1,
-      "name": "Ali",
-      "surname": "Ibrahimov",
-      "mail": "@gmail.com",
-      "birthday": "10.02.2000",
-      "GenderId": 6,
-      "PassengerTypeId": 8
-    }
-  ],
   "Flies": [
     {
       "id": 1,
@@ -448,6 +411,18 @@
       "ticketCount": "4",
       "fromAirportId": 9,
       "id": 4
+    },
+    {
+      "rezervationNumber": 1699344460309,
+      "flyType": "Business",
+      "totalPrice": 180,
+      "userFin": "2GWQ1XF",
+      "departureDate": "12.10.2024",
+      "fly": "Ataturk Airport-Napoli Airport",
+      "ticketNumber": "MI15F646",
+      "ticketCount": "2",
+      "fromAirportId": 10,
+      "id": 5
     }
   ],
   "registeredTickets": [
@@ -498,6 +473,94 @@
       "ticketCount": "1",
       "fromAirportId": 3,
       "id": 6
+    }
+  ],
+  "specialOffers": [
+    {
+      "title": "AZAL sərnişinləri üçün Kinderland-ə 25% Endirim!",
+      "description": "Bu gündən etibarən AZAL reysləri ilə uçuş həyata keçirən bütün sərnişinlər Kinderland giriş biletinə 25% endirim əldə edəcəklər.",
+      "imgUrl": "https://portal.azal.az/_next/static/media/o1.0bfe13f0.jpg",
+      "id": 1
+    },
+    {
+      "title": "Rentalcars.com saytından avtomobil bron edin, mil qazanın",
+      "description": "Xidmət səyahətiniz zamanı gözəl vaxt keçirməyə imkan verəcək, çünki onun əsas məqsədi dünyanın 160-dan çox ölkəsində səyahətinizi rahat etməkdir! Siz ictimai nəqliyyat cədvəlindən asılı olmayacaqsınız və marşrutunuzu dəyişə biləcəksiniz.",
+      "imgUrl": "https://portal.azal.az/_next/static/media/o4.9286038b.jpg",
+      "id": 2
+    },
+    {
+      "title": "Booking.com ilə hotel bron edin, mil qazanın",
+      "description": "Booking.com bütün dünyada hotellərin, mənzillərin, evlərin müstəqil şəkildə bron edilməsi üçün saytdır. Xidmət 43 dildə mövcuddur və dünyanın demək olar ki, bütün ölkələrində 28 milyondan çox yerləşdirmə variantları təklif edir.",
+      "imgUrl": "https://portal.azal.az/_next/static/media/o3.b58f64f3.jpg",
+      "id": 3
+    },
+    {
+      "title": "Azal Club",
+      "description": "“Azal Club” - pərakəndə satış mağazaları şəbəkəsində alış-veriş zamanı, həmçinin müxtəlif növ xidmət mərkəzlərində bonus millərini toplamağa imkan verən pulsuz virtual loyallıq kartıdır.",
+      "imgUrl": "https://portal.azal.az/_next/static/media/o2.d163e137.jpg",
+      "id": 4
+    }
+  ],
+  "transitions" : [
+    {
+      "id": 1,
+      "imgUrl": "https://portal.azal.az/_next/static/media/mile.14a30c58.jpg",
+      "title": "AZAL-Miles",
+      "description": "AZAL-Miles proqramı “Azərbaycan Hava Yolları” aviaşirkəti ilə tez-tez uçan sərnişinlər üçün yaradılmış proqramdır.",
+      "name": "Proqram haqqında",
+      "header": "AZAL-Miles proqramı “Azərbaycan Hava Yolları” aviaşirkəti ilə tez-tez uçan sərnişinlər üçün yaradılmış proqramdır.",
+      "bgImg": "https://fed.az/upload/news/2482873.jpg",
+      "about": "AZAL-Miles tez-tez uçan sərnişin proqramı olaraq, iştirakçılarını səyahət və status balları ilə mükafatlandırır.Azərbaycan Hava Yolları aviaşirkətinin müntəzəm reysləri ilə uçuşlara görə və proqramın əməkdaş şirkətlərinin xidmətlərindən istifadə edildiyi zaman hesaba səyahət balları əlavə edilir. Hesaba əlavə edilən səyahət ballarının sayı (tarifə rüsumlar, hava limanı yığımları və əlavə xərclər istisna olmaqla) ödənilmiş əsas tarifin hər bir avrosuna görə əlavə edilir.Səyahət balları Azərbaycan Hava Yolları QSC-nin müntəzəm uçuşlarında mükafatlandırmalara dəyişdirilə bilər.Yerinə yetirilən hər uçuşa görə sərnişin müəyyən miqdarda status balları toplayır. Həmin status ballarının miqdarı uçuş istiqamətindən və xidmət sinfindən asılıdır."
+    },
+    {
+      "id": 2,
+      "imgUrl": "https://portal.azal.az/_next/static/media/business-class-p-2.eb813a64.jpg",
+      "title": "Biznes-klass",
+      "description": "Biznes Sinifdə daha rahat və sərbəst səyahət edin.",
+      "name": "Biznes Sinif",
+      "header": "Biznes Sinifdə daha rahat və sərbəst səyahət edin.",
+      "bgImg": "https://samchui.com/wp-content/uploads/2016/02/OS4A5747-800x533.jpg",
+      "about": "Hansı ölkəyə səyahət etdiyinizdən asılı olmayaraq, “Azərbaycan Hava Yolları” şirkətinin Biznes Sinfi Sizə uçuş boyu özünüzü daha rahat və sərbəst hiss etmək imkanı verəcəkdir.Biznes Sinif biletlərinə hər biri 32 kiloqrama qədər çəkidə 2 yer baqaj və 10 kiloqrama qədər çəkidə 2 yer əl yükü daxildir.Uçuş boyu sərnişinlər video izləyə və ya musiqi dinləyə bilərlər. Səyahət dəsti sayəsində uçuş uşaqlar üçün belə hiss olunmadan keçəcək. Əyləncəli oyunlar, təkrar istifadə edilə bilən rəsm lövhəsi, rəngli karandaşlarla rəngləmə tapmacası və uşaq yuxu maskası olan sehrli uşaq dəsti (4-10 yaş) təqdim edirik (bu dəst dörd saatdan çox davam edən uçuşlarda verilir). Səyahət yastığı. 7 saatdan çox davam edən uçuşlarda yumşaq oyuncaqlar təqdim edilir. Sehrli stikerlər.Aviaşirkətin rəngarəng şəkilli bort jurnalında siz faydalı və maraqlı məlumatlarla tanış ola bilərsiniz. Burada siz macəra dolu səyahət, dünyanın füsunkar yerləri, gözəl şəhərləri barədə məqalələrlə tanış ola və mədəniyyət, biznes və sənaye sahəsində son xəbərləri öyrənə bilərsiniz. Biz müxtəlif insanların və peşə sahiblərinin maraq və zövqünü nəzərə alırıq ki, bu da jurnalımızı daha da maraqlı edir və digərlərindən fərqləndirir. Jurnalın səhifələrində həmçinin şirkətin uçuş sxemləri, hava limanlarında transfer cədvəlləri və s. əks etdirilib."
+    },    
+    {
+      "id": 3,
+      "imgUrl": "https://portal.azal.az/_next/static/media/qidalanma-3.905f8ea9.jpg",
+      "title": "Təyyarədə qidalanma",
+      "description": "'Azərbaycan Hava Yolları' aviaşirkətinin bütün beynəlxalq reyslərində pulsuz qidalanma təmin olunur.",
+      "name": "Təyyarədə qidalanma",
+      "header": "Azərbaycan Hava Yolları aviaşirkətinin bütün beynəlxalq reyslərində pulsuz qidalanma təmin olunur.",
+      "bgImg" : "https://www.bildirchin.az/wp-content/uploads/2020/01/batik.jpg",
+      "about"  : "Günün hansı vaxtı uçmağınızdan asılı olmayaraq, Sizə hər zaman diqqətlə seçilmiş məhsullardan hazırlanmış dadlı yemək seçimi təklif olunacaq. İsti yemək ilə yanaşı, bütün reys ərzində Siz həmçinin limitsiz miqdarda çay və qəhvə sifariş edə bilərsiniz.Qeyd edək ki, menyu Sizin uçuş sinfinizdən, mövsümdən, günün vaxtından və uçuş istiqamətindən asılı olaraq dəyişə bilər. Uçuş müddəti 150 dəqiqədən az olan reyslərdə ekonom sinfində isti yeməklər təqdim olunmur. Həmin uçuşlarda sərnişinlərə çay, kofe və su verilir.Azərbaycan Hava Yolları aviaşirkətinin reyslərində ekonom sinif aviabileti alarkən əlavə olaraq aşağıda təqdim olunmuş setlərdən biznes sinif təamları əldə edə bilərsiniz. Diqqətinizə çatdırırıq ki, yay mövsümündə soyuq qəlyanaltı kimi ət, qış mövsümündə isə dəniz məhsulları təqdim edilir.Siz həmçinin xüsusi növ yeməkləri pulsuz sifariş edə bilərsiniz. Bunun üçün bizim aviaşirkətimizin çağrı mərkəzinə uçuşunuza ən azı 24 saat qalmış müraciət etməyiniz lazımdır. Sizin yaş və pəhriz xüsusiyyətləriniz nəzərə alınaraq, sizə müxtəlif növ bort qidası təklif olunur."
+    }
+  ],
+  "popularDirecions" : [
+    {
+      "id" : 1,
+      "name" : "Tbilisi",
+      "price" : "92$",
+      "country" : "Gürcüstan",
+      "imgUrl" : "https://www.bizevdeyokuz.com/wp-content/uploads/tiflis-kala-bolgesi.jpg"
+    },
+    {
+      "id" : 2,
+      "name" : "Istanbul",
+      "price" : "172$",
+      "country" : "Türkiyə",
+      "imgUrl" : "https://europeinwinter.com/wp-content/uploads/2022/06/iStock-475460738.jpeg"
+    },
+    {
+      "id" : 3,
+      "name" : "Barselona",
+      "price" : "511$",
+      "country" : "İspaniya",
+      "imgUrl" : "https://turlar.az/uploads/news/barselona.jpg"
+    },
+    {
+      "id" : 4,
+      "name" : "Dubay",
+      "price" : "271$",
+      "country" : "Birləşmiş Ərəb Əmirlikləri",
+      "imgUrl" : "https://cdn.britannica.com/69/156369-050-75E7FD08/skyline-Dubai-United-Arab-Emirates.jpg"
     }
   ]
 }

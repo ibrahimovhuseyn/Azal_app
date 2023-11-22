@@ -26,6 +26,12 @@
                     outline: 1px solid #ccb9b9;
                     outline-offset: 3px;
                     border-radius: 10px;
+
+                    .dropdownItem{
+                        &:hover{
+                            background-color: rgb(110, 110, 219);
+                        }
+                    }
                 }
 
                 .dropdownToggle {

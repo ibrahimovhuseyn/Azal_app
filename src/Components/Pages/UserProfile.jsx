@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 import { apiUrl } from '../../Confiq'
 import { setCurrentUser, setUserSoldTicket } from '../Layout/Slices/home'
-import { Table } from 'reactstrap'
+import { Button, Table } from 'reactstrap'
 
 function UserProfile() {
   const params = useParams()
@@ -28,11 +28,18 @@ function UserProfile() {
   return (
     <div className='container'>
       <h1>Your tickets</h1>
-      <button
-        onClick={signOut}
-      >
-        Cixis
-      </button>
+      <div>
+        <Button
+          onClick={() => navigate('/')}
+          className='mx-2'
+        >Ana səhifə
+        </Button>
+        <Button
+          onClick={signOut}
+        >
+          Cixis
+        </Button>
+      </div>
       <Table
         hover
       >

@@ -21,6 +21,10 @@ import Admin from './Components/Pages/Admin'
 import AllSoldTickets from './Components/Layout/AdminPages/AllSoldTickets'
 import AddElements from './Components/Layout/AdminPages/AddElements'
 import TicketRegister from './Components/Layout/FliesRegistration/TicketRegister'
+import AllOffers from './Components/Layout/About/AllOffers'
+import ShowOffer from './Components/Pages/ShowOffer'
+import Footer from './Components/Footer/Footer'
+import ShowTransition from './Components/Pages/ShowTransition'
 
 function App() {
 
@@ -36,8 +40,8 @@ function App() {
           <div>
             <Admin />
             <Routes>
-                  <Route path='/allsolds' element={<AllSoldTickets />} />
-                  <Route path='/add' element={<AddElements />} />
+              <Route path='/allsolds' element={<AllSoldTickets />} />
+              <Route path='/add' element={<AddElements />} />
             </Routes>
             <ToastContainer />
 
@@ -45,12 +49,7 @@ function App() {
           :
           <div>
             <div className="bgImg">
-              <div className="">
-                <Header />
-                <Roots />
-              </div>
-
-              <div>
+        <div>
                 <Routes>
                   <Route path='/' element={<Home />} />
                   <Route path='/buyticket' element={<BuyTicket />} />
@@ -60,11 +59,13 @@ function App() {
                   <Route path='/registration' element={<Registration />} />
                   <Route path='/ticketregister' element={<TicketRegister />} />
                   <Route path='/signin' element={<SignIn />} />
+                  <Route path='alloffers' element={<AllOffers />} />
                   <Route path='/profile/:fin' element={<UserProfile />} />
+                  <Route path='/alloffers/:id' element={<ShowOffer />} />
+                  <Route  path='transitions/:id' element={<ShowTransition/>}/>
                 </Routes>
               </div>
             </div>
-            <About />
             <ToastContainer />
           </div>
       }

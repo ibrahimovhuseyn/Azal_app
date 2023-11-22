@@ -47,7 +47,7 @@ function Inputs() {
   }
 
   return (
-    <div className='inputs'>
+    <div className='inputs container'>
       <Select
         options={countryList}
         getOptionLabel={option => option.name}

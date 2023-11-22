@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Logo() {
 
@@ -6,7 +7,9 @@ function Logo() {
     return (
         <div className='container'>
             <div className="img-wrapper">
-                <img src={imgUrl} alt="" />
+                <Link to={'/'}>
+                    <img src={imgUrl} alt="" />
+                </Link>
             </div>
         </div>
     )
