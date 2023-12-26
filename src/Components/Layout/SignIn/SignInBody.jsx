@@ -4,7 +4,6 @@ import { FaLock } from 'react-icons/fa'
 import { Button, Form, Input, Label, Row } from 'reactstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { errorText } from '../../Lib/errorText'
 import { toast } from 'react-toastify'
 import { apiUrl, toast_config } from '../../../Confiq'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
@@ -18,7 +17,7 @@ function SignInBody() {
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const { currentUser, users, isAuth } = useSelector(store => store.homeSlice)
+  const { users, isAuth } = useSelector(store => store.homeSlice)
 
   useEffect(() => {
     getUsers()
@@ -30,6 +29,7 @@ function SignInBody() {
   }
 
 
+
   const handleLogin = (e) => {
     e.preventDefault()
     const formData = new FormData(e.target)
@@ -37,10 +37,9 @@ function SignInBody() {
     for (const [key, value] of formData.entries()) {
       data[key] = value
     }
-    const { fin, password } = data
+    const { phone, password } = data
 
-    const selectedUser = users.find(item => item.fin === fin && item.password === password)
-
+    const selectedUser = users.find(item => item.phone == phone && item.password == password)
     if (!selectedUser) {
       Swal.fire({
         icon: 'error',
@@ -51,8 +50,8 @@ function SignInBody() {
     }
     else {
       localStorage.setItem("isAuth", true)
-      localStorage.setItem("currentUser", JSON.stringify(data))
-      dispatch(setCurrentUser(data))
+      localStorage.setItem("currentUser", JSON.stringify(selectedUser))
+      dispatch(setCurrentUser(selectedUser))
       navigate('/')
     }
   }
@@ -74,9 +73,9 @@ function SignInBody() {
         }}
       >
         <Input
-          name='fin'
+          name='phone'
           type='text'
-          placeholder='PIN'
+          placeholder='Phone number'
         />
         <Input
           onChange={e => handleInputChange(e)}
@@ -96,16 +95,21 @@ function SignInBody() {
         <Button
           type='submit'
           color='primary'
-        >Daxil ol</Button>
+        >
+          Daxil ol
+        </Button>
       </Form>
 
       <div>
         <ul>
           <li>
-            <Link>Parolumu unutmuşam</Link>
+            <Link to={'/resetpassword'}>Parolumu unutmuşam</Link>
           </li>
           <li>
             <Link to={'/registration'}>Yeni qeydiyyat</Link>
+          </li>
+          <li>
+            <Link to={'/'}>Ana səhifə</Link>
           </li>
         </ul>
       </div>

@@ -5,9 +5,10 @@ import About from '../Layout/About/About'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 function Home() {
+ 
   return (
     <div className='home'>
-      <Header/>
+      <Header />
       <Roots />
       <Inputs />
       <About />

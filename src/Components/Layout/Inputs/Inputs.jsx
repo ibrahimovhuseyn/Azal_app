@@ -3,7 +3,7 @@ import Select from 'react-select'
 import axios from 'axios'
 import { apiUrl } from '../../../Confiq'
 import { useSelector, useDispatch } from 'react-redux'
-import { getAirportList, getCityList, getCountryList, getFlyList, setSelectedAirport, setSelectedCity, setSelectedCountry} from './inputslice'
+import { getAirportList, getCityList, getCountryList, getFlyList, setSelectedAirport, setSelectedCity, setSelectedCountry } from './inputslice'
 import { Button, Table } from 'reactstrap'
 import { useNavigate } from "react-router-dom";
 import { getCurrentFly } from '../Mutlistep/buySlice'
@@ -21,10 +21,9 @@ function Inputs() {
     selectedAirport,
     flyList
   } = useSelector(store => store.inputSlice)
-  const {isAuth} = useSelector(store=>store.homeSlice)
+  const { currentUser } = useSelector(store => store.homeSlice)
 
   const navigate = useNavigate()
-
 
   useEffect(() => {
     getList()
@@ -37,11 +36,11 @@ function Inputs() {
     axios.get(`${apiUrl}/flies?fromAirportId=${selectedAirport.id}`).then(res => dispatch(getFlyList(res.data)))
   }
 
-  const buyTicket = () =>{
-    if(isAuth){
+  const buyTicket = () => {
+    if (currentUser.id) {
       navigate('/buyticket')
     }
-    else{
+    else {
       navigate("/signin")
     }
   }
@@ -49,6 +48,7 @@ function Inputs() {
   return (
     <div className='inputs container'>
       <Select
+        placeholder="Hazırda olduğunuz ölkəni seçin ..."
         options={countryList}
         getOptionLabel={option => option.name}
         getOptionValue={option => option.id}

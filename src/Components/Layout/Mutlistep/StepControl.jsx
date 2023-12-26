@@ -12,7 +12,7 @@ import { toast } from 'react-toastify'
 
 function StepControl() {
 
-  const { currentStep, step1, step2, step3, currentFly, validation } = useSelector(store => store.buySlice)
+  const { currentStep, step1, step2, step3, currentFly } = useSelector(store => store.buySlice)
   const { currentUser } = useSelector(store => store.homeSlice)
   const { selectedAirport } = useSelector(store => store.inputSlice)
   const navigate = useNavigate()
@@ -21,12 +21,34 @@ function StepControl() {
 
 
   const complete = () => {
+    if (currentStep === 1) {
+      if (!step1.fullname || !step1.phone) {
+        toast.error("Lutfən tələb olunan informasiyaları daxil edin", toast_config)
+        return
+      }
+      else {
+        dispatch(goNext())
+      }
+    }
+    else if (currentStep === 2) {
+      if (!step2.ticketCount || !step2.flyType) {
+        toast.error("Lutfən tələb olunan informasiyaları daxil edin", toast_config)
+        return
+      }
+      else {
+        dispatch(goNext())
+      }
+    }
+    else {
+      dispatch(goNext())
+    }
+
     if (currentStep === 4) {
       axios.post(`${apiUrl}/Soldtickets`, {
         rezervationNumber: step3.fin,
         flyType: step2.flyType,
         totalPrice: step2.ticketCount * currentFly.price,
-        userFin: currentUser.fin,
+        userPhone: currentUser.phone,
         departureDate: currentFly.departureDate,
         fly: `${currentFly.fromAirportName}-${currentFly.toAirportName}`,
         ticketNumber: currentFly.flyNumber,
@@ -64,7 +86,6 @@ function StepControl() {
         color='primary'
         onClick={() => {
           complete()
-          dispatch(goNext())
         }}
       >
         {currentStep === 4 ? 'Tamamla' : "Növbəti"}

@@ -12,7 +12,6 @@ function PopularDirections() {
   useEffect(() => {
     axios.get(`${apiUrl}/popularDirecions`).then(res => dispatch(getDirections(res.data)))
   }, [])
-  console.log(directions);
   return (
     <div className='popularDirections'>
       <h1>Populyar istiqamətlər</h1>

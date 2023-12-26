@@ -2,12 +2,11 @@ import React from 'react'
 import { Button } from 'reactstrap'
 
 function NavItem(
-    { text, isActive, onClick }
+    { text, isActive }
 ) {
     return (
         <div className={`navItem ${isActive ? "active" : ""}`}>
-            <Button
-                onClick={onClick}>
+            <Button>
                 {text}
             </Button>
         </div>

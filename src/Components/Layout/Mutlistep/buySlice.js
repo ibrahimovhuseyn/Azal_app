@@ -32,12 +32,6 @@ const initialState = {
     step3: {
         fin: Date.now(),
         fly: ""
-    },
-    validation: {
-        fullname: "Ad daxil edin",
-        phone: "Telefon nomresi daxil edin",
-        tickerCount: "BIlet sayini daxil edin",
-        flyType: "Ucus novunu daxil edin"
     }
 }
 
@@ -65,10 +59,6 @@ export const buySlice = createSlice({
         getCurrentFly: (state, action) => {
             state.currentFly = action.payload
         },
-        getErrors: (state, action) => {
-            const { stateName, field, value } = action.payload
-            state[stateName][field] = value
-        },
         resetSteps: (state) => {
             state.step1 = {}
             state.step2 = {}
@@ -82,7 +72,6 @@ export const { goSelected,
     goPrev,
     getValues,
     getCurrentFly,
-    getErrors,
     resetCurrentStep,
     resetSteps } = buySlice.actions
 export default buySlice.reducer

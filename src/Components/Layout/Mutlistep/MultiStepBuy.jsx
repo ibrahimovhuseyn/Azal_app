@@ -17,11 +17,11 @@ function MultiStepBuy() {
         else if (currentStep === 2) {
             return <Step2 />
         }
-        else if(currentStep ===3) {
+        else if (currentStep === 3) {
             return <Step3 />
         }
         else {
-            return <Step4/>
+            return <Step4 />
         }
     }
     return (

@@ -35,7 +35,7 @@ function TicketRegister() {
         else {
             Swal.fire({
                 icon: 'error',
-                title: 'Uğurlusuz əməliyyat',
+                title: 'Uğursuz əməliyyat',
                 text: 'Bu bilet artıq qeydiyyata alınmışdır',
             })
             return

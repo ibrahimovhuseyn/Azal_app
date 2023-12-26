@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Input, Label, Row } from 'reactstrap'
-import { getErrors, getValues } from './buySlice'
+import { getValues } from './buySlice'
 import Select from 'react-select'
 import axios from 'axios'
 import { apiUrl } from '../../../Confiq'
@@ -33,11 +33,7 @@ function Step2() {
                 field: "ticketCount",
                 value: e.target.value
               }))
-              dispatch(getErrors({
-                stateName: 'validation',
-                field: "tickerCount",
-                value: ""
-              }))
+
             }
             }
           />
@@ -53,11 +49,6 @@ function Step2() {
                 stateName: 'step2',
                 field: "flyType",
                 value: e.name
-              }))
-              dispatch(getErrors({
-                stateName: 'validation',
-                field: "flyType",
-                value: ""
               }))
             }
             }

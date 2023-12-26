@@ -3,10 +3,11 @@ import { NavLink } from 'react-router-dom'
 import Inputs from '../Inputs/Inputs'
 
 function Roots() {
+
   return (
-    <div className='roots container mt-5'>
+    <div className='roots container pt-5'>
       <ul>
-        <li>
+        <li className=''>
           <NavLink
             to={'/'}
           >Aviabilet almaq
@@ -18,12 +19,7 @@ function Roots() {
           >Uçuşa qeydiyyat
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to={'/flymanagment'}
-          >Rezervasiyını idarə edilməsi
-          </NavLink>
-        </li>
+       
       </ul>
 
 

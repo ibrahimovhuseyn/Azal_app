@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Form, Input, Table } from 'reactstrap'
+import { Button, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 import Select from 'react-select'
 import axios from 'axios'
 import { apiUrl, toast_config } from '../../../Confiq'
@@ -14,77 +14,69 @@ function SearchTicket() {
 
   const [rezerv, setRezerv] = useState(true)
   const [list, setList] = useState([])
+  const [modal, setModal] = useState(false);
 
   const navigate = useNavigate()
 
   const { searchingData, soldTickets, findData } = useSelector(store => store.flyingRegistration)
   const dispatch = useDispatch()
+  console.log(findData);
 
   useEffect(() => {
     axios.get(`${apiUrl}/airports`).then(res => setList(res.data))
     axios.get(`${apiUrl}/soldTickets`).then(res => dispatch(getSoldTickets(res.data)))
+
   }, [])
 
-  const searchData = () => {
+  const toggle = () => setModal(!modal);
+  console.log(searchingData);
 
+  const searchData = () => {
     if (rezerv) {
-      const findData = soldTickets.find(ticket => ticket.rezervationNumber === searchingData.rezervationNum && ticket.userFin.toUpperCase() === searchingData.fin.toUpperCase() && ticket.fromAirportId === searchingData.selectedAirportId)
-      dispatch(setFindData(findData))
+      if (!searchingData.phone || !searchingData.rezervationNum || !searchingData.selectedAirportId) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Lütfən məlumatları düzgün daxil edin',
+        })
+
+      }
+      const findData = soldTickets.find(item => item.rezervationNumber == searchingData.rezervationNum)
+      if (!findData) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Məlumat tapilmadı',
+        })
+      }
+      else {
+        dispatch(setFindData(findData))
+        toggle()
+      }
     }
     else if (!rezerv) {
-      const findData = soldTickets.find(ticket => ticket.ticketNumber.toUpperCase() === searchingData.ticketNum.toUpperCase() && ticket.userFin.toUpperCase() === searchingData.fin.toUpperCase() && ticket.fromAirportId === searchingData.selectedAirportId)
-      dispatch(setFindData(findData))
-    }
-    if (!searchingData.fin) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Lütfən fin kodunuzu daxil edin',
-      })
-      return
-    }
-    else if (rezerv && !searchingData.rezervationNum) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Lütfən rezervasiya nömrənizi  daxil edin',
-      })
-      return
-    }
-    else if (!rezerv && !searchingData.ticketNum) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Lütfən bilet nömrənizi  daxil edin',
-      })
-      return
-    }
-    else if (!searchingData.selectedAirportId) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Lütfən gediş aeroportunuzu  daxil edin',
-      })
-      return
-    }
-    if (!findData) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Məlumat tapılmadı!!!',
-      })
-      return
-    }
-    else {
-      Swal.fire({
-        icon: 'success',
-        title: 'Oops...',
-        text: 'Məlumat tapıldı',
-      })
-      navigate('/ticketregister')
+      if (!searchingData.phone || !searchingData.ticketNum || !searchingData.selectedAirportId) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Lütfən məlumatları düzgün daxil edin',
+        })
+      }
+      const findData = soldTickets.find(item => item.ticketNumber == searchingData.ticketNum)
+      console.log(findData);
+      if (!findData) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Məlumat tapilmadı',
+        })
+      }
+      else {
+        dispatch(setFindData(findData))
+        toggle()
+      }
     }
   }
-
 
   return (
     <div className='searchTicket'>
@@ -106,13 +98,14 @@ function SearchTicket() {
         <div className='d-flex'>
           <Input
             className='w-50'
-            placeholder='Fin kodunuz*'
+            placeholder='Telefon nömrəniz*'
             onChange={e => {
               dispatch(setSearchingData({
                 stateName: 'searchingData',
-                field: "fin",
+                field: "phone",
                 value: e.target.value
               }))
+
             }}
           />
           {
@@ -161,11 +154,37 @@ function SearchTicket() {
           }}
         />
         <Button
-          onClick={searchData}
+          onClick={() => searchData()}
         >
           Axtarış
         </Button>
       </div>
+      <Modal isOpen={modal} toggle={toggle}>
+        <ModalHeader toggle={toggle}>Uçuşun qeydiyyatı</ModalHeader>
+        <ModalBody>
+          Davam etmək?
+        </ModalBody>
+        <ModalFooter>
+          <Button color="primary" onClick={() => {
+            Swal.fire({
+              icon: 'success',
+              title: 'Uğurlu əməliyat',
+              text: 'Biletiniz qeydiyyata alındı',
+            })
+            dispatch(setFindData({}))
+            toggle()
+            navigate("/")
+          }}>
+            Qeydiyyat et
+          </Button>{' '}
+          <Button color="danger" onClick={() => {
+
+
+          }}>
+            Ləğv et
+          </Button>
+        </ModalFooter>
+      </Modal>
     </div>
   )
 }

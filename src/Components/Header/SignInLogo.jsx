@@ -8,21 +8,19 @@ import { useNavigate } from 'react-router-dom'
 function SignInLogo() {
 
   const { currentUser, isAuth } = useSelector(store => store.homeSlice)
-  const currentUserFin = currentUser.fin
-
   const navigate = useNavigate()
 
   return (
     <div className='signInLogo'>
       {
-        !isAuth ?
+        !currentUser.phone ?
           <button
             onClick={() => navigate('/signin')}
           >
             <PiSignInBold className='item' />
           </button> :
           <button
-            onClick={() => navigate(`/profile/${currentUserFin}`)}
+            onClick={() => navigate(`/profile/${currentUser.id}`)}
           >
             <FaUserAlt className='item' />
           </button>

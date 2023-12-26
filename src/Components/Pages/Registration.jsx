@@ -5,15 +5,16 @@ import { setErrors } from '../Layout/Slices/register';
 import axios from 'axios'
 import { apiUrl, toast_config } from '../../Confiq';
 import { toast } from 'react-toastify'
-import { errorText } from '../Lib/errorText';
+import { useNavigate } from 'react-router-dom';
 
 
 function Registration() {
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false);
+  const [registerErrors, setRegisterErros] = useState({})
 
-  const { users, errors } = useSelector(store => store.registerSlice)
   const dispatch = useDispatch()
+  const navigate =useNavigate()
 
 
 
@@ -25,27 +26,27 @@ function Registration() {
     setShowPassword(e.target.checked)
   }
 
-  // function validationErrors(data) {
-  //   const errors = {
-  //     fullname: "",
-  //     email: "",
-  //     fin: "",
-  //     password: ""
-  //   }
-  //   if (!data.fullname.trim()) {
-  //     errors.fullname = errorText.required('Fullname')
-  //   }
-  //   if (!data.email.trim()) {
-  //     errors.email = errorText.required('Email')
-  //   }
-  //   if (!data.fin.trim()) {
-  //     errors.fin = errorText.required('Fin')
-  //   }
-  //   if (!data.password.trim()) {
-  //     errors.password = errorText.required('Password')
-  //   }
-  //   return errors
-  // }
+  function registerValidate(data) {
+    const errors = {
+      fullname: "",
+      email: "",
+      phone: "",
+      password: ""
+    }
+    if (!data.fullname) {
+      errors.fullname = "Fullname is required"
+    }
+    if (!data.email) {
+      errors.email = "Email is required"
+    }
+    if (!data.phone) {
+      errors.phone = "Phone is required"
+    }
+    if (!data.password) {
+      errors.password = "Password is required"
+    }
+    return errors
+  }
 
   const register = (e) => {
     e.preventDefault()
@@ -54,22 +55,27 @@ function Registration() {
     for (const [key, value] of formData.entries()) {
       data[key] = value
     }
-    // const errors = validationErrors(data)
-    // dispatch(setErrors(errors))
+    const errors = registerValidate(data)
+    setRegisterErros(errors)
 
-    // if (Object.values(errors).filter(string => string.length)) {
-    //   toast.error('Plese filled boxes', toast_config)
-    //   return
-    // }
+    if (Object.values(errors).filter(string => string).length) {
+      toast.error("Please filled the boxes", toast_config)
+      return
+    }
+    else if (data.password.length <= 5) {
+      toast.error("Password length is minimum 6 characters")
+      return
+    }
 
     axios.post(`${apiUrl}/users`, {
       fullname: data.fullname,
-      fin: data.fin,
+      phone: data.phone,
       email: data.email,
       password: data.password
     }).then(res => {
       toast.success("Registration complete", toast_config)
       e.target.reset()
+      navigate('/')
     })
 
   }
@@ -88,26 +94,26 @@ function Registration() {
                 name='fullname'
                 type='text'
                 id='fullname'
-                className={`${errors.fullname ? "border border-danger w-50" : "w-50"}`}
+                className={`${registerErrors.fullname ? "border border-danger w-50" : "w-50"}`}
                 placeholder='Enter your fullname'
               />
               {
-                errors.fullname &&
-                <p className='mt-2 text-danger fw-bold' >{errors.fullname}</p>
+                registerErrors.fullname &&
+                <p className='mt-2 text-danger fw-bold' >{registerErrors.fullname}</p>
               }
             </div>
             <div className='my-4'>
-              <Label htmlFor='fin'><b>Enter your FIN</b></Label>
+              <Label htmlFor='fin'><b>Enter your phone number</b></Label>
               <Input
-                name='fin'
+                name='phone'
                 type='text'
                 id='fin'
-                className={`${errors.fin ? "border border-danger w-50" : "w-50"}`}
-                placeholder='Enter your fin'
+                className={`${registerErrors.phone ? "border border-danger w-50" : "w-50"}`}
+                placeholder='Enter your phone'
               />
               {
-                errors.fin &&
-                <p className='mt-2 text-danger fw-bold' >{errors.fin}</p>
+                registerErrors.fin &&
+                <p className='mt-2 text-danger fw-bold' >{registerErrors.fin}</p>
               }
             </div>
 
@@ -117,12 +123,12 @@ function Registration() {
                 name='email'
                 type='email'
                 id='email'
-                className={`${errors.email ? "border border-danger w-50" : "w-50"}`}
+                className={`${registerErrors.email ? "border border-danger w-50" : "w-50"}`}
                 placeholder='Enter your email'
               />
               {
-                errors.email &&
-                <p className='mt-2 text-danger fw-bold' >{errors.email}</p>
+                registerErrors.email &&
+                <p className='mt-2 text-danger fw-bold' >{registerErrors.email}</p>
               }
             </div>
             <div className="my-2">
@@ -132,12 +138,12 @@ function Registration() {
                 type={showPassword ? 'text' : 'password'}
                 id='password'
                 onChange={e => handleInputChange(e)}
-                className={`${errors.password ? "border border-danger w-50" : "w-50"}`}
+                className={`${registerErrors.password ? "border border-danger w-50" : "w-50"}`}
                 placeholder='Enter your password'
               />
               {
-                errors.password &&
-                <p className='mt-2 text-danger fw-bold' >{errors.password}</p>
+                registerErrors.password &&
+                <p className='mt-2 text-danger fw-bold' >{registerErrors.password}</p>
               }
               <Input
                 type='checkbox'

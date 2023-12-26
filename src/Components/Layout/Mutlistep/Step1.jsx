@@ -1,13 +1,13 @@
 import React from 'react'
 import { Input, Label, Row } from 'reactstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { getErrors, getValues } from './buySlice'
+import { getValues } from './buySlice'
 import PhoneInput from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
 
 function Step1() {
 
-  const { step1, validation } = useSelector(store => store.buySlice)
+  const { step1 } = useSelector(store => store.buySlice)
 
 
   const dispatch = useDispatch()
@@ -25,11 +25,6 @@ function Step1() {
                 field: 'fullname',
                 value: e.target.value
               }))
-              dispatch(getErrors({
-                stateName: "validation",
-                field: "fullname",
-                value: ""
-              }))
             }
             }
           />
@@ -45,11 +40,6 @@ function Step1() {
                 stateName: "step1",
                 field: "phone",
                 value: phoneNumber
-              }))
-              dispatch(getErrors({
-                stateName: "validation",
-                field: "phone",
-                value: ""
               }))
             }}
           />

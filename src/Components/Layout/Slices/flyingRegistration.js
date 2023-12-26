@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
     searchingData: {
-        fin: "",
+        phone: "",
         ticketNum: "",
         rezervationNum: "",
         selectedAirportId: ""

@@ -10,7 +10,6 @@ function ShowTransition() {
   const { transitions } = useSelector(store => store.aboutSlice)
   const renderTransition = transitions.find(item => item.id == id)
 
-  console.log(renderTransition);
 
 
   return (

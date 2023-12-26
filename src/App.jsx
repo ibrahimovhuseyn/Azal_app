@@ -12,7 +12,7 @@ import { useSelector } from 'react-redux'
 import About from './Components/Layout/About/About'
 import Registration from './Components/Pages/Registration'
 import SignIn from './Components/Pages/SignIn'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'sweetalert2/src/sweetalert2.scss'
 import BuyTicket from './Components/Pages/BuyTicket'
@@ -25,6 +25,7 @@ import AllOffers from './Components/Layout/About/AllOffers'
 import ShowOffer from './Components/Pages/ShowOffer'
 import Footer from './Components/Footer/Footer'
 import ShowTransition from './Components/Pages/ShowTransition'
+import ResetPassword from './Components/Pages/ResetPassword'
 
 function App() {
 
@@ -49,7 +50,7 @@ function App() {
           :
           <div>
             <div className="bgImg">
-        <div>
+              <div>
                 <Routes>
                   <Route path='/' element={<Home />} />
                   <Route path='/buyticket' element={<BuyTicket />} />
@@ -58,11 +59,12 @@ function App() {
                   <Route path='/flystatus' element={<FlyStatus />} />
                   <Route path='/registration' element={<Registration />} />
                   <Route path='/ticketregister' element={<TicketRegister />} />
+                  <Route path='/resetPassword' element={<ResetPassword />} />
                   <Route path='/signin' element={<SignIn />} />
                   <Route path='alloffers' element={<AllOffers />} />
                   <Route path='/profile/:fin' element={<UserProfile />} />
                   <Route path='/alloffers/:id' element={<ShowOffer />} />
-                  <Route  path='transitions/:id' element={<ShowTransition/>}/>
+                  <Route path='transitions/:id' element={<ShowTransition />} />
                 </Routes>
               </div>
             </div>

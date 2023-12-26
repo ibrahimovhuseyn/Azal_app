@@ -5,7 +5,7 @@
     // align-items: center;
     background: #fff;
     width: 360px;
-    height: 480px;
+    height: 520px;
     border-radius: 10px;
     box-shadow: 5px -9px 4px -3px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 5px -9px 4px -3px rgba(8, 29, 106, 0.75);
@@ -78,6 +78,8 @@
         }
         ul{
             list-style-type: none;
+            margin-top: 1rem;
+            padding-bottom: 1rem;
         }
         a{
             text-decoration: none;
