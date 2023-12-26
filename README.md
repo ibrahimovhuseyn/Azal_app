@@ -2,10 +2,11 @@
 
 You can run these commands to view the project : 
 1.At first you open the new terminal
-2.cd .\azal_app\
+2.cd .\azal_app
 3.npm run dev
 4.Open new terminal
-5.cd .\azal_app\
+5.cd .\azal_app
+6.json-server --watch db.json
 
 All steps for user  : 
 1.Choose your airport country, after your city, choose your airport
