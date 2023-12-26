@@ -12,6 +12,7 @@ function AllSoldTickets() {
     getData()
   }, [])
 
+  console.log(allSoldTickets);
   const getData = () => {
     axios.get(`${apiUrl}/soldtickets`).then(res => dispatch(getAllSoldTickets(res.data)))
 
@@ -33,7 +34,7 @@ function AllSoldTickets() {
           {
             allSoldTickets.map(item => (
               <tr key={item.id}>
-                <td>{item.userFin}</td>
+                <td>{item.userPhone}</td>
                 <td>{item.ticketNumber}</td>
                 <td>{item.fly}</td>
                 <td>{item.departureDate}</td>

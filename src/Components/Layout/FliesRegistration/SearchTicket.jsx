@@ -5,7 +5,7 @@ import axios from 'axios'
 import { apiUrl, toast_config } from '../../../Confiq'
 import { toast } from 'react-toastify'
 import { useDispatch, useSelector } from 'react-redux'
-import { getSoldTickets, setFindData, setSearchingData } from '../Slices/flyingRegistration'
+import { getRegisteredTicket, setFindData, setSearchingData } from '../Slices/flyingRegistration'
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom'
 
@@ -18,19 +18,18 @@ function SearchTicket() {
 
   const navigate = useNavigate()
 
-  const { searchingData, soldTickets, findData } = useSelector(store => store.flyingRegistration)
+  const { searchingData, registeredTickets, findData } = useSelector(store => store.flyingRegistration)
   const dispatch = useDispatch()
-  console.log(findData);
 
   useEffect(() => {
     axios.get(`${apiUrl}/airports`).then(res => setList(res.data))
-    axios.get(`${apiUrl}/soldTickets`).then(res => dispatch(getSoldTickets(res.data)))
+    axios.get(`${apiUrl}/registeredTickets`).then(res => dispatch(getRegisteredTicket(res.data)))
 
   }, [])
 
   const toggle = () => setModal(!modal);
-  console.log(searchingData);
 
+  console.log(registeredTickets);
   const searchData = () => {
     if (rezerv) {
       if (!searchingData.phone || !searchingData.rezervationNum || !searchingData.selectedAirportId) {
@@ -41,7 +40,7 @@ function SearchTicket() {
         })
 
       }
-      const findData = soldTickets.find(item => item.rezervationNumber == searchingData.rezervationNum)
+      const findData = registeredTickets.find(item => item.rezervationNumber == searchingData.rezervationNum)
       if (!findData) {
         Swal.fire({
           icon: 'error',
@@ -62,7 +61,7 @@ function SearchTicket() {
           text: 'Lütfən məlumatları düzgün daxil edin',
         })
       }
-      const findData = soldTickets.find(item => item.ticketNumber == searchingData.ticketNum)
+      const findData = registeredTickets.find(item => item.ticketNumber == searchingData.ticketNum)
       console.log(findData);
       if (!findData) {
         Swal.fire({

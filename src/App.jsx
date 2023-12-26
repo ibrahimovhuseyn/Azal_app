@@ -37,7 +37,7 @@ function App() {
 
     <div className={`${mode ? "bg-dark" : ""}`}>
       {
-        currentUser.fin === "admin" ?
+        currentUser.phone === "admin" ?
           <div>
             <Admin />
             <Routes>

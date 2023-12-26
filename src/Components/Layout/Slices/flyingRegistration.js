@@ -8,7 +8,8 @@ const initialState = {
         selectedAirportId: ""
     },
     soldTickets: [],
-    findData: null
+    findData: null,
+    registeredTickets: []
 }
 
 export const flyingRegistrationSlice = createSlice({
@@ -22,11 +23,14 @@ export const flyingRegistrationSlice = createSlice({
         getSoldTickets: (state, action) => {
             state.soldTickets = action.payload
         },
-        setFindData : (state, action) =>{
+        setFindData: (state, action) => {
             state.findData = action.payload
+        },
+        getRegisteredTicket: (state, action) => {
+            state.registeredTickets = action.payload
         }
     }
 })
 
-export const { setSearchingData, getSoldTickets, setFindData} = flyingRegistrationSlice.actions
+export const { setSearchingData, getSoldTickets, setFindData, getRegisteredTicket } = flyingRegistrationSlice.actions
 export default flyingRegistrationSlice.reducer

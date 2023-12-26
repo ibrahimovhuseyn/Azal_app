@@ -2,7 +2,7 @@
   "users": [
     {
       "fullname": " Admin",
-      "fin": "admin",
+      "phone": "admin",
       "password": "admin",
       "email": "admin@mail.ru",
       "id": 10000
@@ -81,6 +81,11 @@
       "id": 9,
       "name": "Izmir",
       "countryId": 1
+    },
+    {
+      "name": "Moskva",
+      "countryId": 4,
+      "id": 10
     }
   ],
   "Airports": [
@@ -138,6 +143,11 @@
       "id": 11,
       "name": "Izmir Airport",
       "cityId": 9
+    },
+    {
+      "cityId": 10,
+      "name": "DomoDedevo",
+      "id": 12
     }
   ],
   "Countries": [
@@ -152,6 +162,10 @@
     {
       "name": "Italy",
       "id": 3
+    },
+    {
+      "name": "Rusiya",
+      "id": 4
     }
   ],
   "FlyTypes": [
@@ -387,6 +401,18 @@
       "ticketCount": "1",
       "fromAirportId": 5,
       "id": 1
+    },
+    {
+      "rezervationNumber": 1703625201242,
+      "flyType": "Economy",
+      "totalPrice": 160,
+      "userPhone": 553066068,
+      "departureDate": "21.01.2024",
+      "fly": "Napoli Airport-Milan Airport",
+      "ticketNumber": "MI15F646",
+      "ticketCount": "2",
+      "fromAirportId": 9,
+      "id": 2
     }
   ],
   "registeredTickets": [
@@ -401,11 +427,21 @@
       "ticketCount": "5",
       "fromAirportId": 6,
       "id": 1
+    },
+    {
+      "rezervationNumber": 1703625201242,
+      "flyType": "Economy",
+      "totalPrice": 160,
+      "userPhone": 553066068,
+      "departureDate": "21.01.2024",
+      "fly": "Napoli Airport-Milan Airport",
+      "ticketNumber": "MI15F646",
+      "ticketCount": "2",
+      "fromAirportId": 9,
+      "id": 2
     }
   ],
-  "registeredflies": [
-    
-  ],
+  "registeredflies": [],
   "specialOffers": [
     {
       "title": "AZAL sərnişinləri üçün Kinderland-ə 25% Endirim!",

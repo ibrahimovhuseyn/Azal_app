@@ -154,7 +154,7 @@ function AddElements() {
             <Button onClick={renderCountryPage}>Ölkə əlavə et</Button>
             <Button onClick={renderCityPage}>Şəhər əlavə et</Button>
             <Button onClick={renderAirportPage}>Aeroport əlavə et</Button>
-            <Button onClick={renderFlyPage}>Uçuş əlavə et</Button>
+            {/* <Button onClick={renderFlyPage}>Uçuş əlavə et</Button> */}
 
             <div>
                 {currentPage === 'country' &&
@@ -200,7 +200,7 @@ function AddElements() {
                             <b>Aeroport əlavə et</b>
                         </Label>
                         <div className='d-flex'>
-                            <p>Əlavə edəcəyiniz ölkəni seçin</p>
+                            <p>Əlavə edəcəyiniz şəhəri seçin</p>
                             <Select
                                 options={cityList}
                                 getOptionLabel={option => option.name}
@@ -219,65 +219,65 @@ function AddElements() {
                     </div>
                 }
                 {
-                    currentPage === 'fly' &&
-                    <div
-                        className='addFly'
-                    >
-                        <Label htmlFor='flyName'>
-                            <b >Uçuş əlavə et</b>
-                        </Label>
-                        <div className='d-flex mb-5 '>
-                            <div className="d-flex">
-                                <p>Uçuş aeroportunu qeyd edin</p>
-                                <Select
-                                    options={airportList}
-                                    getOptionLabel={option => option.name}
-                                    getOptionValue={option => option.id}
-                                    onChange={e => setFromAirportName(e)}
-                                />
-                            </div>
-                            <div className="d-flex">
-                                <p>Eniş aeroportunu qeyd edin</p>
-                                <Select
-                                    options={airportList}
-                                    getOptionLabel={option => option.name}
-                                    getOptionValue={option => option.id}
-                                    onChange={e => setToAirportName(e)}
-                                />
-                            </div>
-                        </div>
-                        <Form
-                            onSubmit={e => handleCreateFly(e)}
-                        >
-                            <div className="form-group mb-4">
-                                <Label htmlFor='departureDate'>Uçuş vaxtı</Label>
-                                <Input
-                                    type='date'
-                                    id='departureDate'
-                                    name='departureDate'
-                                />
+                    // currentPage === 'fly' &&
+                    // <div
+                    //     className='addFly'
+                    // >
+                    //     <Label htmlFor='flyName'>
+                    //         <b >Uçuş əlavə et</b>
+                    //     </Label>
+                    //     <div className='d-flex mb-5 '>
+                    //         <div className="d-flex">
+                    //             <p>Uçuş aeroportunu qeyd edin</p>
+                    //             <Select
+                    //                 options={airportList}
+                    //                 getOptionLabel={option => option.name}
+                    //                 getOptionValue={option => option.id}
+                    //                 onChange={e => setFromAirportName(e)}
+                    //             />
+                    //         </div>
+                    //         <div className="d-flex">
+                    //             <p>Eniş aeroportunu qeyd edin</p>
+                    //             <Select
+                    //                 options={airportList}
+                    //                 getOptionLabel={option => option.name}
+                    //                 getOptionValue={option => option.id}
+                    //                 onChange={e => setToAirportName(e)}
+                    //             />
+                    //         </div>
+                    //     </div>
+                    //     <Form
+                    //         onSubmit={e => handleCreateFly(e)}
+                    //     >
+                    //         <div className="form-group mb-4">
+                    //             <Label htmlFor='departureDate'>Uçuş vaxtı</Label>
+                    //             <Input
+                    //                 type='date'
+                    //                 id='departureDate'
+                    //                 name='departureDate'
+                    //             />
 
-                            </div>
-                            <div className="form-group mb-4">
-                                <Label htmlFor='arrivalDate'>Eniş vaxtı</Label>
-                                <Input
-                                    type='date'
-                                    id='arrivalDate'
-                                    name='arrivalDate'
-                                />
+                    //         </div>
+                    //         <div className="form-group mb-4">
+                    //             <Label htmlFor='arrivalDate'>Eniş vaxtı</Label>
+                    //             <Input
+                    //                 type='date'
+                    //                 id='arrivalDate'
+                    //                 name='arrivalDate'
+                    //             />
 
-                            </div>
-                            <div className="form-group mb-4">
-                                <Label htmlFor='ticketPrice'>Bilet qiyməti</Label>
-                                <Input
-                                    type='number'
-                                    id='ticketPrice'
-                                    name='ticketPrice'
-                                />
-                            </div>
-                            <Button type='submit'>Əlavə et</Button>
-                        </Form>
-                    </div>
+                    //         </div>
+                    //         <div className="form-group mb-4">
+                    //             <Label htmlFor='ticketPrice'>Bilet qiyməti</Label>
+                    //             <Input
+                    //                 type='number'
+                    //                 id='ticketPrice'
+                    //                 name='ticketPrice'
+                    //             />
+                    //         </div>
+                    //         <Button type='submit'>Əlavə et</Button>
+                    //     </Form>
+                    // </div>
                 }
             </div>
 

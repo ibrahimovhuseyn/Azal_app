@@ -19,6 +19,7 @@ function StepControl() {
 
   const dispatch = useDispatch()
 
+  console.log(currentStep);
 
   const complete = () => {
     if (currentStep === 1) {
@@ -57,7 +58,7 @@ function StepControl() {
       })
       toast.success("Uğurlu əməliyyat", toast_config)
       dispatch(resetSteps())
-      dispatch(resetCurrentStep())
+      dispatch(resetCurrentStep(1))
       dispatch(setSelectedCountry({}))
       dispatch(setSelectedAirport({}))
       dispatch(setSelectedCity({}))
